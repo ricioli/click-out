@@ -35,15 +35,48 @@ onClickOut($element, $removeElement, functionTrue, functionFalse, destroyEvent, 
 ```
 
 ### $element
+Elemento do qual será monitorado o clique fora
 ```
 Tipo: elemento html
-Obrigatório: Sim
+Obrigatório: sim
 ```
 > Exemplo:
 ```
 onClickOut($('#element'), $('#remove-element'));
 ```
 
+### $removeElement
+Elemento que será removido caso o clique seja fora de $element podendo ser o mesmo elemento ou não.
+```
+Tipo: elemento html
+Obrigatório: não
+```
+### functionTrue
+Função executada caso o clique seja fora de $element.
+```
+Tipo: função
+Obrigatório: não
+```
+### functionFalse
+Função executada caso o clique seja dentro de $element.
+```
+Tipo: função
+Obrigatório: não
+```
+### destroyEvent
+Valor true ou false que define se o evento será execudo apenas uma vez.
+```
+Tipo: boolean
+Padrão: true;
+Obrigatório: não
+```
+### preventDefault
+Valor true ou false que define se o clique fora terá inibido o comportamento padrão do elemento (por exemplo o clique em um link não levara para a página de destino do link).
+```
+Tipo: boolean
+Padrão: true;
+Obrigatório: não
+```
 ## Licence
 
 MIT License (MIT)
