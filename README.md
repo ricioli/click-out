@@ -1,6 +1,6 @@
 # Click Out
 
-Função em jquery que detecta o clique fora deste elemento.
+Função em jquery que detecta o clique fora de um elemento.
 
 Com esta função pode-se:
 
