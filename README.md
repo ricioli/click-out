@@ -51,18 +51,42 @@ Elemento que será removido caso o clique seja fora de $element podendo ser o me
 Tipo: elemento html
 Obrigatório: não
 ```
+> Exemplo:
+```
+onClickOut($('#element'), $('#remove-element'));
+
+```
+
 ### functionTrue
 Função executada caso o clique seja fora de $element.
 ```
 Tipo: função
 Obrigatório: não
 ```
+> Exemplo:
+```
+function clickOut() {
+  $('#remove-element').fadeOut();
+}
+onClickOut($('#elemento'), null, clickOut);
+
+```
+
 ### functionFalse
 Função executada caso o clique seja dentro de $element.
 ```
 Tipo: função
 Obrigatório: não
 ```
+> Exemplo:
+```
+function clickIn() {
+  alert('clicou dentro');
+}
+onClickOut($('#elemento'), $('#elemento'), null, clickIn);
+
+```
+
 ### destroyEvent
 Valor true ou false que define se o evento será execudo apenas uma vez.
 ```
@@ -70,6 +94,18 @@ Tipo: boolean
 Padrão: true;
 Obrigatório: não
 ```
+> Exemplo:
+```
+function clickIn() {
+  alert('clicou dentro');
+}
+function clickOut() {
+  alert('clicou fora');
+}
+onClickOut($('#elemento'), $('#elemento'), null, null, true);
+
+```
+
 ### preventDefault
 Valor true ou false que define se o clique fora terá inibido o comportamento padrão do elemento (por exemplo o clique em um link não levara para a página de destino do link).
 ```
@@ -77,6 +113,12 @@ Tipo: boolean
 Padrão: true;
 Obrigatório: não
 ```
+> Exemplo:
+```
+onClickOut($('#elemento'), $('#elemento'), null, null, true true);
+
+```
+
 ## Licence
 
 MIT License (MIT)
