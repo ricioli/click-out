@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    html,
+    body {
+      margin: 0;
+      height: 100vh;
+      font-family: Arial, Helvetica, sans-serif;
+      color: #FFF;
+    }
+    #elemento {
+      padding: 32px;
+      background-color: #4285F4;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      -moz-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+    }
+    strong {
+    font-size: 24px;
+    }
+  </style>
+</head>
+<body>
+  <div id="elemento">
+    <p>
+      <strong></strong><br>
+    <p>
+      <b>Com esta função pode-se:</b><br>
+    <p>
+      1. remover um elemento quando o clique for fora, sendo ele o próprio elemento que se esta monitorando o clique fora ou outro qualquer;<br>
+      2. Definir uma função para ser executada quando o clique for fora do elemento;<br>
+      3. Definir uma para ser executada quando o clique for dentro do elemento;<br>
+      4. Definir que o evento seja disparado uma unica vez (ideal no caso de um modal que será removido, após sua remoção todos os cliques serão fora, já que ele não esta mais na tela, então é melhor que o evento não seja monitorado) ou indefinidamente;<br>
+      5. Definir se o clique fora não disparara o comportamento padrão (por exemplo o clique em um link não levara para a página de destino do link).
+  </div>
+  <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+  <script src="js/jquery.click-out.js"></script>
+  <script>
+    function clickIn() {
+      alert('clicou dentro');
+    }
+    function clickOut() {
+      alert('clicou fora');
+    }
+    onClickOut($('#elemento'), $('#elemento'), clickOut, clickIn, true, true);
+  </script>
+</body>
+</html>
